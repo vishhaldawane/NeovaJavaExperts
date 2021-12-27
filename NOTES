@@ -1,0 +1,27 @@
+/*
+
+
+	1. function without argument(s) and without return value
+	
+			void functionName() {
+				
+			}
+			
+	2. function with argument(s) BUT no return value
+	
+			void functionName(int a, int b) {
+				
+			}
+	
+	3. function with argument(s) AND with return value
+	
+			float functionName(int a, int b) {
+				return floatValue;
+			}
+	
+	4. 	function without argument(s) BUT with return value	
+			float functionName() {
+				return floatValue;
+			}
+
+*/
