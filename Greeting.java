@@ -40,13 +40,13 @@ class MyMusic
 /*
   
   
-  															first program	
+  															first program				datatype
   															22-Dec-2021
 1 Abhijeet        4       5       testing
-2 Abhishek        4       4									inactive
+2 Abhishek        4       4									inactive		inactive
 3 Akshay G        6       1
 4 Akshay K        2       3.5     manual testing
-5 Akshay          4       2       js
+5 Akshay S        4       2       js													noresponse
 
 6 Anuj            1       2       manual testing
 7 Bhushan         5/6     14      C#/java/f/w code
@@ -56,14 +56,14 @@ class MyMusic
 
 11 Manasi          3       5       testing
 12 Minal           2       5.5
-13 Pramod
-14 Prashant        1       5       testing
+13 Pramod																	
+14 Prashant        1       5       testing												absent
 15 Ravi            2       2       testing
 
 16 Ruhi            5       4.5     testing
 17 Rushikesh
 18 Shubham         6.5     1       testing
-19 Sukant          4       1+      javascript
+19 Sukant          4       1+      javascript											absent
 20 Swapnil         2.5     9+      teamlead
 21 Vinay      
 
