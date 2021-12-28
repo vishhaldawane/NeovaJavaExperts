@@ -22,19 +22,88 @@
  * 													--------------
  * 													toString() // redefined
  * 													void setBankAccount(x,y,z);
- * 													
- * 													
+ * 													BankAccount();
+ * 													withdraw(.);
+ * 													deposit(..);
+ * 													fundTransfer();
  * 
+ * 
+ * 
+ * 										|<-------------BankAccount ----------------->
+ * 										accountNumber	accountHolder	accountBalance
+ * 										+-------------------------------------------+
+ * 										|	102		|	Bhushan		|	6000		|
+ * 										+-------------------------------------------+
+ * 			--------------------------->200 
+ * 			|
+ * 			|
+ * 			200
+ * 			baObj2
+ * 
+ * 
+ * 										|<-------------BankAccount ----------------->
+ * 										accountNumber	accountHolder	accountBalance
+ * 										+-------------------------------------------+
+ * 										|	103		|	Ruhi		|	7000		|
+ * 										+-------------------------------------------+
+ * 			--------------------------->300 
+ * 			|
+ * 			|
+ * 			300
+ * 			baObj3
+ * 													
+ * 													
+ * 			BankAccount baObj1 		= 	new 		BankAccount();
+ * 			|			|				|				|
+ *    classname		ref to an object	Allocator	constructor 
+ *    
+ *    
+ *    	CONSTRUCTOR : is a special code block
+ *    				  it has the same name as of the enclosing class
+ *    				  every class has a default constructor provided by JPL
+ *    
+ *    
+ *    				 A CONSTRUCTOR DOESNT HAVE RETURN TYPE
+ *    				 BUT IT CAN TAKE PARAMETERS
+ *    
+ *    				 IT IS AUTOMATICALLY EXECUTED DURING THE INSTANTIATION PROCESS OF THE CLASS
+ *    				 HENCE IT CAN BE USED TO INITIALIZE THE STATE OF THE OBJECT
+ *    
+ *    				 
+ *    
+ *    class Flight
+ *    {
+ *    		Flight() { } <---- constructor
+ *    }
+ *    
+ *    class Point
+ *    {
+ *    		Point() { } <---- constructor
+ *    
+ *    }
  * 
  */
 public class BankTest {
 	public static void main(String[] args) {
-		BankAccount baObj1 = new BankAccount();
-		BankAccount baObj2 = new BankAccount();
-		BankAccount baObj3 = new BankAccount();		
+		
+		BankAccount baObj1 = new BankAccount(201, "Jack",7000);
+		BankAccount baObj2 = new BankAccount(301, "Janet",8000);
+		BankAccount baObj3 = new BankAccount(401, "Julie",5000);		
+		
+		baObj1.showBankAccount();
+		baObj2.showBankAccount();
+		baObj3.showBankAccount();
+		
+		System.out.println("baObj1 "+baObj1);//indirect call to toString()
+		System.out.println("baObj2 "+baObj2);
+		System.out.println("baObj3 "+baObj3);
+		
+		/*
+		 * 
 		baObj1.setBankAccount(101, "Minal",5000);
 		baObj2.setBankAccount(102, "Bhushan",6000);
 		baObj3.setBankAccount(103, "Ruhi",7000);
+		
 		//System.out.println("baObj1 "+baObj1);//indirect call to toString()
 		//System.out.println("baObj2 "+baObj2);
 		//System.out.println("baObj3 "+baObj3);
@@ -52,7 +121,7 @@ public class BankTest {
 		
 		baObj1.showBankAccount();
 		baObj2.showBankAccount();
-		baObj3.showBankAccount();
+		baObj3.showBankAccount();*/
 		
 	}
 }

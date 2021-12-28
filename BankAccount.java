@@ -21,6 +21,17 @@ public class BankAccount { // every class is the child of java.lang.Object class
 		System.out.println("---------------------");
 	}
 	
+	BankAccount() {
+		System.out.println("BankAccount() constructor...." );
+	}
+	
+	public BankAccount(int x, String y, double z) {
+		System.out.println("BankAccount(int,String,double)....constuctor...");
+		accountNumber = x;
+		accountHolder = y;
+		accountBalance = z;
+	}
+	
 	public void setBankAccount(int x, String y, double z) {
 		System.out.println("setBankAccount(int,String,double)....");
 		accountNumber = x;
