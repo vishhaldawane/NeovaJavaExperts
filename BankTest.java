@@ -83,8 +83,35 @@
  *    }
  * 
  */
+
+class Browser
+{
+	
+	Browser(SafariDriver safari) {
+		
+	}
+	Browser(ChromeDriver chrome) {
+		
+	}
+	Browser(FireFoxDriver firefox) {
+	
+	}
+	
+}
+
+class SafariDriver { }
+class ChromeDriver { }
+class FireFoxDriver { }
+
 public class BankTest {
 	public static void main(String[] args) {
+		
+		SafariDriver safariDriver = new SafariDriver();
+		ChromeDriver chromeDriver = new ChromeDriver();
+		FireFoxDriver fireFoxDriver = new FireFoxDriver();
+		
+		Browser myBrowser1 = new Browser(chromeDriver);
+		
 		
 		BankAccount baObj1 = new BankAccount(201, "Jack",7000);
 		BankAccount baObj2 = new BankAccount(301, "Janet",8000);
