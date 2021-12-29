@@ -1,4 +1,40 @@
 
+/*
+
+		ANYTHING IN THIS WORLD IS CREATED ONLY IN 2 STAGES
+		
+
+		UNMANIFESTED					MANIFESTED
+		INVISIBLE						VISIBLE
+		|								|
+		INTANGIBLE						TANGIBLE
+		|								|
+		MIND							|
+		50 TRILLION CELLS				
+		|
+		INFORMATION
+		|
+		VIBRATING AT A RATE
+		|
+		FASTER THAN LIGHT
+		|
+		THATS WHY IT IS VISIBLE
+		|
+		THOUGHT		+ 	EMOTIONS		=		ACTION		+  RESULT
+		|				|						|				|
+		THINK			ENERGY IN
+		|				MONTH
+		FREQUENCY		CHARGE +/-		=		ACT [ KARMA ]	OUTPUT
+										TIME
+										
+		
+		T E A R FORMULA
+		
+		
+		
+		
+
+*/
 //test cases
 public class KiteTest { // testing unit | execution environment 
 	public static void main(String[] args) {
