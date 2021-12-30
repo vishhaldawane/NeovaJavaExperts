@@ -7,9 +7,10 @@ public class PhoneTest {
 		myPhone.dial("Juliet");
 		myPhone.dial(101);
 		myPhone.dial(11, 344556);
-		myPhone.dial(676767, "Seema");
+		myPhone.dial(676767, "Seema"); //REFLECTION API
 		myPhone.dial("Jack",454545);
 		
+		myPhone.dial(1212);
 	}
 }
 
@@ -39,8 +40,19 @@ class Phone
 		
 	}
 	void dial(String  name, int number) {// 2 arg - type is same as above
-		System.out.println("dial(String,int) : just dialing..number: "+number+" of  "+name);
+		System.out.println("dial(String,int) : just dialing..name: "+name+" number is  "+number);
 		
 	}
 	
 }
+
+class SmartPhone extends Phone
+{
+	
+}
+class WisePhone extends SmartPhone
+{
+	
+}
+
+
