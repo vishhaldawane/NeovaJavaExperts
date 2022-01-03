@@ -11,6 +11,9 @@ public class PhoneTest {
 		myPhone.dial("Jack",454545);
 		
 		myPhone.dial(1212);
+		System.out.println(10+20+ " output is "+10+20);
+		System.out.println(10+20+ " output is "+(10+20));
+
 	}
 }
 

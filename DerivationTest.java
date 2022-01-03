@@ -21,12 +21,15 @@ public class DerivationTest {
 		child.coding();
 		
 	}
+	
+	
 }
 
 
-class GrandFather
+class GrandFather // extends Object
 {
 	GrandFather() {
+		super();
 		System.out.println("GrandFather() ctor....");
 	}
 	void farming() {
@@ -37,7 +40,7 @@ class GrandFather
 class Father extends GrandFather
 {
 	Father() {
-		//super(); default line of all ctors in java
+		super(); //default line of all ctors in java
 		//must be the first line
 		
 		System.out.println("\tFather() ctor....");
@@ -53,7 +56,7 @@ class Father extends GrandFather
 class Child extends Father
 {
 	Child() {
-		//super(); default line of all ctors in java
+		super(); //default line of all ctors in java
 		//must be the first line
 		
 		System.out.println("\t\tChild() ctor....");
@@ -79,14 +82,5 @@ class Farm
 	}
 }
 
-/*
-class Person
-{
-	private char gender;
-	private int age;
-	private String name;
-	
-	
-	
-}
-*/
+
+

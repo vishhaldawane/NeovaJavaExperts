@@ -230,11 +230,68 @@ public class OopsConcepts {
 	 						
 	 					d. operator overloading
 	 					
+	 						ability of an operator symbol to be used
+	 						in different context
+	 					
 	 				
 	 		
 	 		4. Inheritance
-	 			
+	 		
+	 		Acquiring properties from existing classes
+	 		
+	 		classification
+	 		
+	 		A								B	
+	 		Derivation					Implementation
+	 									abstract classes/interfaces
+	 		Person						
+	 		|
+	 	------------------ 
+	 		|			|
+	 		Student		Magician
+	 		|
+	 	---------------------
+	 		|			|
+	 		Employee	MedicalStudent
+	 						|
+	 					 Doctor
+	 					
+	 		
+	 		super() -- calls a constructor from a constructor
+	 					must be the first line from a ctor
+	 					
+	 					
+	 		super.  -- calls any accessible 
+	 					data member/function of the super class from
+	 					any function of the child class
+	 		
+	 					may not be the first line
+	 					
+	 					
 	 		5. Object communication	
+	 		
+	 		One object invoking method of another object
+	 		
+	
+	 		
+	 ===============================================================	
+ 		
+	 			final				static				abstract
+	 ===============================================================
+	 	
+	 field		constant/
+	 			immutable
+	 			data
+	 ---------------------------------------------------------------
+	 
+	 method		cannot be
+	 			overridden
+	 ---------------------------------------------------------------
+
+	 class		cannot be
+	 			extended/
+	 			subclassed
+	 ---------------------------------------------------------------
 
 
 */
