@@ -1,22 +1,29 @@
 public class Kite
 {
-	private String kiteColor;
-	private String kiteOwner;
-	private int kiteLength;
-	private boolean flying;
+	private String kiteColor; //non-static | object's data
+	private String kiteOwner; //non-static | object's data
+	private int kiteLength; //non-static | object's data
+	private boolean flying; //non-static | object's data
 	
+	private static int kiteCount; //now it is not an object's data
+	//rather it is the class's data | shared data across all the objects
 	
-	public void showKite() {
+	public static void showKiteCount() {
+		System.out.println("Kite Count  : "+kiteCount);
+	}
+	public void showKite() { //object ref dependent
 		
 		System.out.println("Kite Owner  : "+kiteOwner);
 		System.out.println("Kite Color  : "+kiteColor);
 		System.out.println("Kite Length : "+kiteLength);
 		System.out.println("Kite Flying : "+flying);
+		System.out.println("Kite Count  : "+kiteCount);
 		System.out.println("-----------");
 	}
 	public Kite() {
 		super();
 		System.out.println("Kite() constructor...");
+		++kiteCount;
 	}
 
 	public Kite(String kiteColor, String kiteOwner, int kiteLength, boolean flying) {
@@ -26,18 +33,21 @@ public class Kite
 		this.kiteOwner = kiteOwner;
 		this.kiteLength = kiteLength;
 		this.flying = flying;
+		++kiteCount;
 	}
 
 	public Kite(String kiteOwner) {
 		super();
 		System.out.println("Kite(String) constructor....");
 		this.kiteOwner = kiteOwner;
+		++kiteCount;
 	}
 
 	public Kite(int kiteLength) {
 		super();
 		System.out.println("Kite(int) constructor....");
 		this.kiteLength = kiteLength;
+		++kiteCount;
 	}
 
 	@Override
@@ -75,56 +85,5 @@ public class Kite
 		this.flying = flying;
 	} 
 
-	
-	
-	
-	
 }
 
-
-class Student
-{
-	
-	int roll;
-	String name;
-	
-	float phy;
-	float chem;
-	float maths;
-	
-	float total;
-	float perc;
-	
-	char grade;
-
-	public Student(int roll, String name, float phy, float chem, float maths, float total, float perc, char grade) {
-		super();
-		this.roll = roll;
-		this.name = name;
-		this.phy = phy;
-		this.chem = chem;
-		this.maths = maths;
-		this.total = total;
-		this.perc = perc;
-		this.grade = grade;
-	}
-
-	public Student(int roll, String name) {
-		super();
-		this.roll = roll;
-		this.name = name;
-	}
-
-	public Student(int roll, String name, float phy, float chem, float maths) {
-		super();
-		this.roll = roll;
-		this.name = name;
-		this.phy = phy;
-		this.chem = chem;
-		this.maths = maths;
-	}
-	
-	
-	
-	
-}
