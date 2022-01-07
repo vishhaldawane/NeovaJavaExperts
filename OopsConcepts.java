@@ -274,29 +274,209 @@ public class OopsConcepts {
 	 		
 	
 	 		
+	 		
+	 		
 	 ===============================================================	
  		
-	 			final				static				abstract
+	 			final				static				abstract/
+	 												incomplete/
+	 												partial
 	 ===============================================================
 	 	
-	 field		constant/
-	 			immutable
-	 			data
+	 field		constant/		shared data				NA
+	 			immutable		across all the
+	 			data			objects of a class
 	 ---------------------------------------------------------------
 	 
-	 method		cannot be
-	 			overridden
+	 method		cannot be		refer other static		method without
+	 			overridden		data/functions			code body/
+	 												partial contract
 	 ---------------------------------------------------------------
 
-	 class		cannot be
-	 			extended/
+	 class		cannot be		nested class/		which cannot be
+	 			extended/		inner class			instantiated
 	 			subclassed
 	 ---------------------------------------------------------------
 
 
+
+
+Interfaces
+
+	-  pure abstract class
+	
+	 - it just has method declarations
+	 
+	 - no scope for any method with code body
+	 
+	 - all method are by default public and abstract
+	 
+	 
+	 					Light <-- pure 
+	 					
+	 
+	 SunLight		MoonLight		WoodenFireLight
+	 |
+	is Sun aware of darkness????
+	if sun says that what is it?
+	
+	 blind person cannot know what darkness is???
+	 
+	 fish doesnt know what the water is
+	 
+	 
+	 
+	 CandleLight		TubeLight		BulbLight
+	 
+	 
+	 
+	 
+	 interface Living
+	 {
+	 	void live();
+	 }
+	 interface Moving
+	 {
+	 	void move();
+	 }
+	 
+	 interface Dieing
+	 {
+	 	void die();
+	 }
+	 
+	 
+	 abstract class Animal implements Living, Moving, Dieing
+	 {
+	 	void breathing();
+	 }
+	 
+	 abstract class Mammal extends Animal //isA
+	 {
+	 	abstract void giveBirth();
+	 }
+	 
+	 interface Reactive
+	 {
+	 	void react();
+	 }
+	 
+	 class Person extends Mammal  implements Reactive //isA
+	 {
+	 	void giveBirth() {
+	 		
+	 	}
+	 	void breathing() { }
+	 	public void live() { }
+	 	public void die() { }
+	 	public void move() { }
+	 }
+
+
+interfaces and abstract can lead to create frameworks
+framework = semi - developed application
+
+			Living	Moving	Dieing
+			|live(); |move();	|die();
+			---------------------
+					|
+					Animal						instanceof  
+					|breathing();
+					|
+					----------------------------------------
+					|					| Flying	| Swimming
+					|					| |	fly();	| swim();
+					Mammal				Bird		Fish
+					|walk();			|			|
+					|				Sparrow			SwordFish
+					|	Reactive		Bat*		WhaleFish*
+					|   |react();	FlyingHorse
+					Person
+					|
+					|	Responsive
+					|    |respond();
+					Student
+					|	Proactive
+					|    |proact();
+					Employee
+	Neighbour		| work();
+		|	------------------------------------------------------
+		|	|			|		|			|		|		|
+		Programmer	Tester	Deployer			..	..	..
+		code();		test();		deploy();
+	
+		
+		
+				Payment
+				| pay();
+	--------------------------------------------
+	|			|				|			|
+	Gpayment	CardPayment	CashPayment	UPIPayment
+		gpay()	swipe();	  cash();		scan();
+		pay();	pay();			pay();		pay();
+		
+		Interfaces are used for multiple level inheritance
+		
+						Animal
+							| breathing();
+				--------------------------
+				|		|				|	
+				Bird*	Fish			Mammal*
+				|fly();	   |swim()		|   |giveBirth();
+				|		   |layEggs();  |   |
+				|layEggs() +-----------[|]--+		
+				|					    | 	|
+				+-----------------------+ 	Whale
+						|					 |
+						Bat*				giveBirth(){}
+						fly();				layEggs(); X
+						giveBirth() {}		swim() { }
+						layEgggs() X
+						
+					
+		virtual base classes
+		
+		   A		
+		F / \ M     dreaded diamond 
+		  \ /
+		   W
+		   
+		   One concrete class can only extend one
+		   concrete class
+		   
+	
+		   
+		   
+		   Flying		Landing		Moving
+		   |fly();		|land();	| moving();
+	----------------------------------------
+	|	   |		|		|
+Flight	Chopper	  Baloon	Rocket
+fly();	fly();		fly();	fly();
+land();	land();		land();	land();
+moving(); moving();	moving();	moving();
+		
 */
 
 
+class A
+{
+}
+class B
+{	
+}
+
+class C extends A,B // no non-linear inheritance in java | but possible in C++
+{	
+}
+
+interface X { }
+interface Y { }
+
+class D implements X,Y // possible with interfaces
+{
+	
+}
 
 
 
