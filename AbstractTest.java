@@ -51,6 +51,22 @@ class Michael extends Angel
 		
 	}
 }
+//being as a designer of your app, you would impose some mandates
+// on the implementaiton
+
+// inheritance
+// derivation			vs				implementation
+											
+// Point2D <-- x,y<- Minal					GeometricalShape <-- abstract <--- OO designer / manager / project leads / architects
+// | x,y set/get const						| calcArea(); <-- abstract
+// | void foo() { }						---------------------------
+// Point3D 			<-- Bhushan			|						|
+// | z  <-- x,y,z						Circle <--- concrete	Square <-- coders
+//ColouredPoint3D						| radius				| side
+//										| calcArea(){ PIr*r}	| calcArea() { side2 }
+// color x + y +z						Ellipse <-- concrete	Rectangle
+//										| v_radius				| side2 
+//																	calcArea() { side * side2 }	
 
 abstract class BankAccount // meant for inheritance
 {
