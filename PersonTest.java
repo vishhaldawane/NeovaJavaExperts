@@ -7,6 +7,9 @@ public class PersonTest {
 		
 		Person person = new Person('F',22,"Minal");
 		person.panCard.setPanCard("ABCK4545R", "Pqr", "12-Oct-1990", "India");
+		person.adhaar.setAdhaarCard("1234 1234 1234", "West Avenue, Bandra, Mumbai");
+		person.voterCard.setVotingCard("T-12321", "G-Ward");
+		
 		person.showPerson();
 		//System.out.println("person : "+person);
 		
@@ -14,6 +17,10 @@ public class PersonTest {
 		
 		Student student = new Student('M',23,"Bhushan",123,"A",90.56f);
 		student.panCard.setPanCard("PQRTF4567P", "Xyz","10-Jan-1991", "Nepal");
+		student.adhaar.setAdhaarCard("9934 8834 7734", "East Avenue, Boriwali, Mumbai");
+		student.voterCard.setVotingCard("T-125125", "S-Ward");
+		student.report.setReportCard(90, 95, 88, 92, 83, 93);
+		
 		student.showStudent();
 
 		//System.out.println("Student : "+student);
@@ -23,6 +30,9 @@ public class PersonTest {
 		Employee emp = new Employee('F',24,"Ruhi",445,"A",97.5f,333,"Analyst",9999);
 		
 		emp.panCard.setPanCard("RTUFE4576A", "Lml", "20-Aug-1990", "Srilanka");
+		emp.adhaar.setAdhaarCard("6565 7878 6767", "Laxmi Road, Kothrud, Pune");
+		emp.voterCard.setVotingCard("T-676767", "N-Ward");
+		emp.report.setReportCard(98, 99, 95, 88, 93, 99);
 		emp.showEmployee();
 		//System.out.println("emp : "+emp);
 		
@@ -32,6 +42,84 @@ public class PersonTest {
 
 //isA		hasA		usesA		producesA
 
+class AdhaarCard
+{
+	private String adhaarNumber;
+	private String address;
+	
+	public void setAdhaarCard(String adhaarNumber, String address) {
+		
+		this.adhaarNumber = adhaarNumber;
+		this.address = address;
+	}
+	void showAdhaarCard() {
+		System.out.println(">>Adhaar :"+adhaarNumber);
+		System.out.println(">>Address:"+address);
+		System.out.println("---");
+	}
+	
+}
+class VotingCard
+{
+	private String voterId;
+	private String ward;
+	
+	public void setVotingCard(String voterId, String ward) {
+		
+		this.voterId = voterId;
+		this.ward = ward;
+	}
+	void showVotingCard() {
+		System.out.println(">>>VoterId:"+voterId);
+		System.out.println(">>>Ward   :"+ward);
+		System.out.println("---");
+	}
+}
+
+class ReportCard
+{
+	private float phy,chem,maths,eng,history, geo;
+	private float total, average;
+	private char grade;
+	
+	public void setReportCard(float phy, float chem, float maths, float eng, float history, float geo) {
+		
+		this.phy = phy;
+		this.chem = chem;
+		this.maths = maths;
+		this.eng = eng;
+		this.history = history;
+		this.geo = geo;
+		this.total = this.phy + this.chem + this.maths + this.eng + this.history + this.geo;
+		
+		this.average = this.total / 6;
+		
+		if(this.average >= 90) { this.grade = 'A'; }
+		else 	if(this.average >= 75 && this.average <90) { this.grade = 'B'; }
+		else 	if(this.average >= 60 && this.average <75) { this.grade = 'C'; }
+		else    if(this.average >= 45 && this.average <60) { this.grade = 'D'; }
+	  	else    if(this.average >= 35 && this.average <45) { this.grade = 'E'; }
+	  	else this.average = 'F';
+	}
+	
+	void showReportCard() {
+		System.out.println("PHY   : "+phy);
+		System.out.println("CHEM  : "+chem);
+		System.out.println("MATH  : "+maths);
+		System.out.println("ENG   : "+eng);
+		System.out.println("HIST  : "+history);
+		System.out.println("GEO   : "+geo);
+		System.out.println("TOT   : "+total);
+		System.out.println("AVG   : "+average);
+		System.out.println("GRADE : "+grade);
+
+	}
+	
+}
+class SalarySlip
+{
+	
+}
 class PanCard
 {
 	String panNumber;
@@ -62,8 +150,8 @@ class Person
 	//private String panCard="SOME PAN VALUE";
 	
 	public PanCard panCard = new PanCard(); //hasA
-	//AdhaarCard ...
-	// VoterCard...
+	AdhaarCard adhaar = new AdhaarCard(); //hasA
+	VotingCard voterCard = new VotingCard(); //hasA
 	
 	public Person(char gender, int age, String name) {
 		super();
@@ -84,6 +172,9 @@ class Person
 		System.out.println("Name   : "+name);
 	//	System.out.println("Pan    : "+panCard);
 		panCard.showPanCard();
+		adhaar.showAdhaarCard();
+		voterCard.showVotingCard();
+	//	System.out.println("-----------------------");
 	}
 
 }
@@ -93,31 +184,28 @@ class Student extends Person //isA
 {
 
 	private int roll;
-	private String grade;
-	private float totalScore; // total 6 variables here
-	//ReportCard
+//	private String grade;
+//	private float totalScore; // total 6 variables here
+	ReportCard report = new ReportCard();
 	
 	public Student(char gender, int age, String name, int roll, String grade, float totalScore) {
 		super(gender,age,name);//Constructor call must be the first statement in a constructor
 		System.out.println("Student(char,int,String,int,String,float)...ctor...");
 		this.roll = roll;
-		this.grade = grade;
-		this.totalScore = totalScore;
+//		this.grade = grade;
+//		this.totalScore = totalScore;
 	}
 	
 	void showStudent() {
 		super.showPerson();
 		System.out.println("Roll   : "+roll);
-		System.out.println("Grade  : "+grade);
-		System.out.println("Total  : "+totalScore);
+//		System.out.println("Grade  : "+grade);
+//		System.out.println("Total  : "+totalScore);
+		report.showReportCard();
 	}
 
 
-	@Override
-	public String toString() {
-		return "Student [toString()=" + super.toString() + ", roll=" + roll + ", grade=" + grade + ", totalScore="
-				+ totalScore + "]";
-	}
+	
 
 	
 
