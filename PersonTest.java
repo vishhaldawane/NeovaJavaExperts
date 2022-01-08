@@ -1,10 +1,67 @@
+import java.awt.Frame;
+
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 
 //jdbc 
 //person student employee    pancard
 //pid								pid(fk)
+
+class MyFrame extends JFrame //isA
+{
+	JMenuBar jmb = new JMenuBar(); //hasA
+	JMenu fileMenu = new JMenu("File"); //hasA
+	JMenu editMenu = new JMenu("Edit"); //hasA
+	JMenu helpMenu = new JMenu("Help"); //hasA
+	
+	JMenuItem item1 = new JMenuItem("New");
+	JMenuItem item2 = new JMenuItem("Open");
+	JMenuItem item3 = new JMenuItem("Close");
+	
+	
+	MyFrame() {
+		
+		fileMenu.add(item1);
+		fileMenu.add(item2);
+		fileMenu.add(item3);
+		
+		jmb.add(fileMenu);
+		jmb.add(editMenu);
+		jmb.add(helpMenu);
+		
+		super.setJMenuBar(jmb); //built in function
+		super.setSize(450,450);
+		super.setLocation(350,350);
+		super.setTitle("MyOwn Frame");
+	}
+}
 public class PersonTest {
 	public static void main(String[] args) {
+		MyFrame mf = new MyFrame();
+		mf.setVisible(true);
 		
+	/*	JFrame f = new JFrame();
+		f.setSize(400,300);
+		f.setLocation(300, 400);
+		f.setTitle("MyFrame");
+		f.setVisible(true);//show the frame
+		
+		JFrame f1 = new JFrame();
+		f1.setSize(300,500); //actual size on screen
+		f1.setLocation(200, 200); //screen location
+		f1.setTitle("Your Frame");
+		f1.setVisible(true); //show the frame
+		
+		
+		JFrame f2 = new JFrame();
+		f2.setSize(100,300);
+		f2.setLocation(100, 100);
+		f2.setTitle("Their Frame");
+		f2.setVisible(true);
+		
+	*/	
 		Person person = new Person('F',22,"Minal");
 		person.panCard.setPanCard("ABCK4545R", "Pqr", "12-Oct-1990", "India");
 		person.adhaar.setAdhaarCard("1234 1234 1234", "West Avenue, Bandra, Mumbai");
@@ -27,12 +84,13 @@ public class PersonTest {
 		
 		System.out.println("-------------");
 		
-		Employee emp = new Employee('F',24,"Ruhi",445,"A",97.5f,333,"Analyst",9999);
+		Employee emp = new Employee('F',24,"Ruhi",445,"A",97.5f,333,"Analyst");
 		
 		emp.panCard.setPanCard("RTUFE4576A", "Lml", "20-Aug-1990", "Srilanka");
 		emp.adhaar.setAdhaarCard("6565 7878 6767", "Laxmi Road, Kothrud, Pune");
 		emp.voterCard.setVotingCard("T-676767", "N-Ward");
 		emp.report.setReportCard(98, 99, 95, 88, 93, 99);
+		emp.salaryJan.setSalarySlip(4500, 500, 300, 200);
 		emp.showEmployee();
 		//System.out.println("emp : "+emp);
 		
@@ -119,6 +177,45 @@ class ReportCard
 	}
 	
 }
+
+class SalarySlip
+{
+	private float basic,hra,da,ta,gross,pf;
+	private float net;
+	private char grade;
+	
+	public void setSalarySlip(float basic, float hra, float da, float ta) {
+		
+		this.basic = basic;
+		this.hra= hra;
+		this.da = da;
+		this.ta = ta;
+		this.gross = this.basic + this.hra + this.da + this.ta;
+		
+		this.pf = this.gross * 0.10f;
+		this.net = this.gross - this.pf;
+		if(this.basic > 5000 ) this.grade ='A';
+		else if(this.basic >= 4000 && this.basic<5000 ) this.grade ='B';
+		else if(this.basic < 4000 ) this.grade ='C';
+		
+	}
+	
+	void showSalarySlip() {
+		System.out.println("------SALARY SLIP DETAILS -----");
+
+		System.out.println("BASIC   : "+basic);
+		System.out.println("HRA     : "+hra);
+		System.out.println("DA      : "+da);
+		System.out.println("TA      : "+ta);
+		System.out.println("GROSS   : "+gross);
+		System.out.println("PF      : "+pf);
+		System.out.println("NET     : "+net);
+		System.out.println("GRADE   : "+grade);
+
+	}
+	
+}
+
 class SalarySlip
 {
 	
@@ -247,17 +344,19 @@ class Employee extends Student //isA
 
 	private int empno;
 	private String job;
-	private float salary; // total 9 variables here
+	//private float salary; // total 9 variables here
 	
-	//SalarySlip 
+	SalarySlip salaryJan = new SalarySlip(); 
+	//Collection framework
+	//ArrayList<SalarySlip> salaries = new ArrayList<SalarySlip>(); 
 	
-	public Employee(char gender, int age, String name, int roll, String grade, float totalScore, int empno, String job, float salary) {
+	public Employee(char gender, int age, String name, int roll, String grade, float totalScore, int empno, String job) {
 		super(gender,age,name,roll,grade,totalScore);//Constructor call must be the first statement in a constructor
 		System.out.println("Employee(char,int,String,int,String,float,int,String,float)...ctor...");
 
 		this.empno = empno;
 		this.job = job;
-		this.salary = salary;
+	//	this.salary = salary;
 		
 	}
 
@@ -265,14 +364,11 @@ class Employee extends Student //isA
 		super.showStudent();
 		System.out.println("Empno  : "+empno);
 		System.out.println("Job    : "+job);
-		System.out.println("Salary : "+salary);
+		//System.out.println("Salary : "+salary);
+		salaryJan.showSalarySlip();
 	}
 
-	@Override
-	public String toString() {
-		return "Employee [toString()=" + super.toString() + ", empno=" + empno + ", job=" + job + ", salary=" + salary
-				+ "]";
-	}
+	
 
 	
 }
