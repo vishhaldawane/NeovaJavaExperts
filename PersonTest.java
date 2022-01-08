@@ -53,9 +53,10 @@ class AdhaarCard
 		this.address = address;
 	}
 	void showAdhaarCard() {
-		System.out.println(">>Adhaar :"+adhaarNumber);
-		System.out.println(">>Address:"+address);
-		System.out.println("---");
+		System.out.println("------ADHAAR CARD DETAILS -----");
+
+		System.out.println("Adhaar :"+adhaarNumber);
+		System.out.println("Address:"+address);
 	}
 	
 }
@@ -70,9 +71,9 @@ class VotingCard
 		this.ward = ward;
 	}
 	void showVotingCard() {
-		System.out.println(">>>VoterId:"+voterId);
-		System.out.println(">>>Ward   :"+ward);
-		System.out.println("---");
+		System.out.println("------VOTING CARD DETAILS -----");
+		System.out.println("VoterId:"+voterId);
+		System.out.println("Ward   :"+ward);
 	}
 }
 
@@ -103,6 +104,8 @@ class ReportCard
 	}
 	
 	void showReportCard() {
+		System.out.println("------REPORT CARD DETAILS -----");
+
 		System.out.println("PHY   : "+phy);
 		System.out.println("CHEM  : "+chem);
 		System.out.println("MATH  : "+maths);
@@ -136,12 +139,38 @@ class PanCard
 	}
 	
 	void showPanCard() {
-		System.out.println(">Pan   : "+panNumber);
-		System.out.println(">Father: "+fatherName);
-		System.out.println(">DOB   : "+birthDate);
-		System.out.println(">Issued: "+issuingAuthority);
+		System.out.println("------PAN DETAILS -----");
+		System.out.println("Pan   : "+panNumber);
+		System.out.println("Father: "+fatherName);
+		System.out.println("DOB   : "+birthDate);
+		System.out.println("Issued: "+issuingAuthority);
 	}
 }
+/*
+ * 			
+ * 						 gender	 age	name	panCard   adhaar  voterCard
+ * 						+-----------------------------------------------+
+ * 						|	F	|22	 | Minal  |	   350 	|450	|		|		
+ * 						+----------------------------|----|-------------+
+ * 		+--------------->100						 |	  |
+ 		|         									 |    |
+ * * 	|											 |	  |	adhaarNumber	address
+ * 		|											 |	  |	---------------------
+ * 		|											 |	  |	|....	|....		|  show / setter
+ * 		|											 |	  |	---------------------
+ * 		|											 +    +---->450
+ 		|											 |		panNumber	fatherName	DOB  issuedBy
+ * 		|											 |		-------------------------------------
+ * 		|											 |		|....	|....		|...	|...	|  show/ setter
+ * 		|											 |		-------------------------------------
+ * 		|											 +----->350
+ * 		|
+ * 		100
+ * 		person
+ * 
+ * Bulb has a Filament
+ * WahingMachine hasA WashingTub
+ */
 class Person
 {
 	private char gender;
