@@ -455,6 +455,118 @@ Flight	Chopper	  Baloon	Rocket
 fly();	fly();		fly();	fly();
 land();	land();		land();	land();
 moving(); moving();	moving();	moving();
+
+Packages
+---------
+
+
+		packages are similar to operating system directories/folders
+		
+		to organize the relevant classes
+		
+		
+				c:\
+				|
+				users
+				|
+				vishhal <-- this can be my workspace folder
+				|
+				jungle <-- main package
+				|
+		------------------------------
+		|		|		|			|
+		river	tree	cave		use <-- sub packages 
+		|		|		  |			|
+Crocodile		Monkey	Lion		TestIt
+	|			|		    |			|
+Crocodile.java	Monkey.java	Lion.java	TestIt.java
+				|							|
+		1. package jungle.tree;			1. package jungle.use;
+		2. public class Monkey {		2. import jungle.tree.Monkey;
+				public void jump() { }	3. public class TestIt {
+			}									psv main() {
+			class Chimp {							Monkey m = new Monkey();
+			}										m.jump();
+												}
+											}
+	
+		   
+	
+		
+		1.        <-- default/package basesd
+		2. private <-- only within the class body
+		3. protected <--only available to the child 
+					<-- also to the non-child within the same package
+					<-- no available to the child with diff package
+						via reference to Monkey
+		4. public <-- anywhere
+		
+		
+		
+		
+		c:\\users\\vishhal\\jungle\\tree
+								|
+							front or backslashes as the separator
+		
+		c:\\users\\vishhal\\jungle.tree
+							   |
+							  separator
+		
+		
+		
+		
+
+
+	Exception handling
+	-------------------
+	
+				Exception = runtime error
+				
+				
+							Errors
+								|
+			------------------------------------------
+			|		|		|		|		|
+			compile	linker	runtime	fatal	logical
+			|		 |		|		  |			|
+		syntax   library  Exception  critical  programmer 4x+4 = 16 
+			
+
+
+								Object
+								|
+							Throwable
+								|
+						-----------------
+						|				|
+						Error		Exception
+									|  "checked" - by the compiler
+							--------------------------------
+							|					|		|
+						RuntimeException	IOException SQLException
+						| "unchecked"			|
+				-----------------------		FileNotFoundException
+				|			|	 |  |
+		ArithmeticException |    | IllegalArgumentException
+			NullPointerException |					|
+					IndexOutOfBoundsException	NumberFormatException
+							|
+			---------------------------------
+			|							|
+	StringIndexOutOfBoundsException 	ArrayIndexOutOfBoundsException
+
+		
+
+
+
+
+
+
+
+
+
+
+
 		
 */
 
