@@ -557,11 +557,56 @@ Crocodile.java	Monkey.java	Lion.java	TestIt.java
 
 		
 
+	shortDrive()					longDrive()
+									|
+								   must check the fuel
+								   must check the docs
+								   must check the stepney wheel
 
+	red signal dishonoured		   red signal dishonoured
+	
 
-
-
-
+	User defined exception
+	-----------------------
+	
+	decide? what type of exception to be created
+	
+	Exception									RuntimeException
+	
+			checked					or			unchecked
+			
+	AccountOpeningBalanceException			InsufficientFundsException
+	InvalidBankDocumentException			
+	
+		longDrive()								shortDrive()
+	StepneyFailedException					RedSignalDishonouredException
+											SpeedLimitCrossedException
+											
+	HomeLoanInterestException
+											ServiceChargedException
+											
+											
+							Door Locking system
+					
+		Auto Locked Door						Manually Locked Door
+		|										|
+		I should ensure to carry				key and lock must be carried
+		the key with me
+		
+		
+		
+		
+					
+					
+					
+					
+					
+					
+					
+					
+			
+	
+	
 
 
 
