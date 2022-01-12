@@ -1,7 +1,12 @@
 
+//java MultithreadTest
+// |		 |
+// "main"	main(String args[])
+
 public class MultithreadTest {
 	public static void main(String[] args) {
 		
+		System.out.println("BEGIN MAIN");
 		Car myCar = new Car(); //I.c
 		myCar.start();
 		
@@ -11,6 +16,16 @@ public class MultithreadTest {
 		Flight flight = new Flight();  //I.c
 		flight.start();
 		//ITC
+		
+		try {
+			myCar.join(); //waiting for this to die
+			rail.join(); //waiting for this to die
+			flight.join(); //waiting for this to die
+		} catch (InterruptedException e) {
+			
+			System.out.println("Thread is interrupted...");
+		}
+		System.out.println("==> END MAIN");
 		
 	}
 }
