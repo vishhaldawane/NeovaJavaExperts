@@ -9,7 +9,6 @@ public class OopsConcepts {
 	top to bottom approach
 	
 	
-	
 	OOPS = Object Oriented Programming System
 	
 	data <--- procedure
@@ -592,6 +591,88 @@ Crocodile.java	Monkey.java	Lion.java	TestIt.java
 		|										|
 		I should ensure to carry				key and lock must be carried
 		the key with me
+		
+		
+	MultiThreading
+	---------------
+	
+	thread = simple set of instructions
+	
+
+	Cash Deposit Counter
+	--------------------
+	books of account
+	----------------
+	101 Suresh 80000 <--book mark level
+	102 Dinesh 60000
+	103 Ramesh 70000
+	...
+	...
+	
+			1.1000				1001-2000			2001->
+				Teller1				Teller2			Teller3
+				|					|				|
+				getBalance()		getBalance()	getBalance()
+				|					|				|
+				calcAmt()			calcAmt()		calcAmt()
+				|					|				|
+				setBalance()		setBalance()	setBalance()
+				|					|				|
+				Customer1			Customer2		Customer3
+	time		10.30am				10.30am			10.30am
+	a/c			101					1101			2010
+	cash		7000/-				8000/-			5000/-
+	deno		100Rs				2000Rs			50Rs
+	nos			70					4				100
+				
+				
+				
+				Customer4
+				...
+				..
+				
+				G			Runnable		JFrame
+							|run();			   |	
+						--------------------+  | extends
+						|	 implements		|  |
+						|					|  --------------------------
+						|					|	|		|				|
+			F		Thread					CarFrame  RailwayFrame  FlightFrame
+					|							run()		run()		run()
+					| start() { } ----------> JVM's Thread Scheduler | Round Robin CPU cycling logic
+					| run() { }						|
+				----------							|
+				| extends							|
+		C	MyThread								|
+			run() { logic }	<-----------------------+
+		Car  Railway  Flight
+		
+	I. extending java.lang.Thread
+		a. extend from java.lang.Thread
+		b. override the run() method ->put your logic here
+		c. instantiate this class
+		d. invoke the start() method -> will invoke run()
+		
+	
+	II. implementing java.lang.Runnable interface
+		a. implement from java.lang.Runnable interface
+		b. mandate to implement run() ->put your logic here
+		c. instantiate this class
+			
+			CarFrame cf = new CarFrame();
+			
+		d. instantiate java.lang.Thread class and to its constructor
+		   pass the object created on step c.
+		   
+		   Thread t = new Thread(cf);
+		   
+		e. and invoke its start() method -> which invokes run()
+			t.start(); --> would invoke cf's run();
+		
+		
+		
+		
+		
 		
 		
 		
