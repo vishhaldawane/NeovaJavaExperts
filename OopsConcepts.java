@@ -673,6 +673,37 @@ Crocodile.java	Monkey.java	Lion.java	TestIt.java
 		
 		
 		
+						Pizza - FoodItem
+		
+		
+		java.lang.Object
+		|
+		wait and notify
+		
+						FoodItem
+							|
+						  boolean
+						isItemServed
+						
+		Producer						Consumer
+		|								|
+		produce()						consume()
+										|
+									if it gets first chance to run
+									then it has to wait() 
+									for produce() to initiate
+									
+		|
+		and once produce()
+		is over
+		it will notify()
+		the waiting thread
+		to start
+		
+		
+		
+		
+		
 		
 		
 		
