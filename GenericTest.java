@@ -1,38 +1,130 @@
 
+class MyInt {
+	int x;
+	MyInt(int a) {
+		x = a;
+	}
+	void print() {
+		System.out.println(x);
+	}
+	//some functinons to work on int
+	void increase() {
+		++x;
+	}
+}
 public class GenericTest {
 
 	public static void main(String[] args) {
+		int p=100;
+		p++;
+		--p;
+		
+		MyInt m = new MyInt(100);
+		m.increase();
+		
 		// TODO Auto-generated method stub
-		IntegerValue iv = new IntegerValue(10, 20);
+		/*IntegerValue iv = new IntegerValue(10, 20);
 		iv.printInteger();
 		iv.swapInteger();
-		iv.printInteger();
+		iv.printInteger();*/
 	//what should we do if we want the same to be done on float
-		System.out.println("----");
-		FloatValue fv = new FloatValue(45.5f, 89.6f);
+		//System.out.println("----");
+		/*FloatValue fv = new FloatValue(45.5f, 89.6f);
 		fv.printFloat();
 		fv.swapFloat();
-		fv.printFloat();
-		System.out.println("----");
-		StringValue sv = new StringValue("Jack", "Julie");
+		fv.printFloat();*/
+	//	System.out.println("----");
+		/*StringValue sv = new StringValue("Jack", "Julie");
 		sv.printString();
 		sv.swapString();
-		sv.printString();
+		sv.printString();*/
+		//System.out.println("----");
+		
+		AnyValue av1 = new AnyValue(10,20);
+		av1.print();
+		av1.swap();
+		av1.print();
 		System.out.println("----");
+		AnyValue av2 = new AnyValue(10.4f,20.5f);
+		av2.print();
+		av2.swap();
+		av2.print();
+		
+		System.out.println("----");
+		AnyValue av3 = new AnyValue(10.4,20.5);
+		av3.print();
+		av3.swap();
+		av3.print();
+		
+		System.out.println("----");
+		AnyValue av4 = new AnyValue('Y','N');
+		av4.print();
+		av4.swap();
+		av4.print();
+		
+		System.out.println("----");
+		AnyValue av5 = new AnyValue("Jack","Julie");
+		av5.print();
+		av5.swap();
+		av5.print();
 		
 		Song s1 = new Song("My Heart Will Go On","Titanic","Celine D",1994);
 		Song s2 = new Song("I want it that way","Millenium","Backstreet Boys",1996);
+		AnyValue av6 = new AnyValue(s1,s2);
+		av6.print();
+		av6.swap();
+		av6.print();
 		
-		SongValue songVal = new SongValue(s1, s2);
+		/*SongValue songVal = new SongValue(s1, s2);
 		songVal.printSong();
 		songVal.swapSong();
-		songVal.printSong();
+		songVal.printSong();*/
 		
 		
 		
 	}
 
 }
+// wrapper classes
+/*
+ * 
+ * primitive	Wrapper/Object	
+ * 		|		|
+ * 		byte	Byte
+ * 		short	Short
+ * 		int		Integer
+ * 		long	Long
+ * 
+ * 		float	Float
+ * 		double	Double
+ * 		boolean	Boolean
+ * 
+ * 		char	Character
+ * 
+ * 
+ */
+class AnyValue<T>  // GENERIC CONTAINER T replaced with Integer,Float, Song
+{
+	T i; //container to hold INTEGER TYPE
+	T j; //container to hold INTEGER TYPE
+	
+	AnyValue(T a, T b) {
+		i = a;
+		j = b;
+	}
+	
+	void print() { //ALGORITHM TO PRINT
+		System.out.println("i "+i); //algorithm to print
+		System.out.println("j "+j); //algorithm to print
+	}
+	void swap() { //ALGORITHM TO SWAP
+		System.out.println("swapping....any....");
+		T  temp = i; //algorithm to swap
+		i = j;
+		j = temp;
+	}
+}
+/*
 class IntegerValue  // CONTAINER 
 {
 	int i; //container to hold INTEGER TYPE
@@ -119,7 +211,7 @@ class SongValue  // CONTAINER
 		i = j;
 		j = temp;
 	}
-}
+}*/
 
 class Song
 {
