@@ -40,37 +40,39 @@ public class GenericTest {
 		sv.printString();*/
 		//System.out.println("----");
 		
-		AnyValue av1 = new AnyValue(10,20);
+		//AnyValue is a raw type. 
+		//References to generic type AnyValue<T> should be parameterized
+		AnyValue<Integer> av1 = new AnyValue<Integer>(10,20);
 		av1.print();
 		av1.swap();
 		av1.print();
 		System.out.println("----");
-		AnyValue av2 = new AnyValue(10.4f,20.5f);
+		AnyValue<Float> av2 = new AnyValue<Float>(10.4f,20.5f);
 		av2.print();
 		av2.swap();
 		av2.print();
 		
 		System.out.println("----");
-		AnyValue av3 = new AnyValue(10.4,20.5);
+		AnyValue<Double> av3 = new AnyValue<Double>(10.4,20.5);
 		av3.print();
 		av3.swap();
 		av3.print();
 		
 		System.out.println("----");
-		AnyValue av4 = new AnyValue('Y','N');
+		AnyValue<Character> av4 = new AnyValue<Character>('Y','N');
 		av4.print();
 		av4.swap();
 		av4.print();
 		
 		System.out.println("----");
-		AnyValue av5 = new AnyValue("Jack","Julie");
+		AnyValue<String> av5 = new AnyValue<String>("Jack","Julie");
 		av5.print();
 		av5.swap();
 		av5.print();
 		
 		Song s1 = new Song("My Heart Will Go On","Titanic","Celine D",1994);
 		Song s2 = new Song("I want it that way","Millenium","Backstreet Boys",1996);
-		AnyValue av6 = new AnyValue(s1,s2);
+		AnyValue<Song> av6 = new AnyValue<Song>(s1,s2);
 		av6.print();
 		av6.swap();
 		av6.print();
@@ -109,6 +111,7 @@ class AnyValue<T>  // GENERIC CONTAINER T replaced with Integer,Float, Song
 	T j; //container to hold INTEGER TYPE
 	
 	AnyValue(T a, T b) {
+		
 		i = a;
 		j = b;
 	}
@@ -118,7 +121,8 @@ class AnyValue<T>  // GENERIC CONTAINER T replaced with Integer,Float, Song
 		System.out.println("j "+j); //algorithm to print
 	}
 	void swap() { //ALGORITHM TO SWAP
-		System.out.println("swapping....any....");
+		System.out.println("swapping....any...."+i.getClass().getTypeName());
+		System.out.println("swapping....any...."+j.getClass().getTypeName());
 		T  temp = i; //algorithm to swap
 		i = j;
 		j = temp;
