@@ -705,10 +705,134 @@ Crocodile.java	Monkey.java	Lion.java	TestIt.java
 		
 		
 		
+	Generics and Collections
+	
+		
+			Generics
+			
+				- template classes and template functions
+				
+				
+	letter pad of the company
+	
+				T i t l e 
+				address   reg. no.  Date :
+			------------------------
+				 Promotion/transfer/upraisal
+				 invoice/offer letter
+				  
+				  
+				  
+			-------------------------
+				foot notes...
+				
+		
+			Components orthogonal space
+			
+			
+					   x - data type - Milk ButterMilk* SoftDrink  Whisky Tea Coffee
+					   | 			   FriedRice
+					  / \			   Noodles
+					 /   \			   PaneerChilly
+					/	  \			   Pickle/Shrikhand
+				   /       \		   WhiskyPeg
+				  y----i----z
+				  |	   |	|
+			+-----+	   |	+-----+
+			|		Iterator	  |
+		Container	   |		Algorithm
+			|		   |			  |
+		 Bottle*	Straw*		drink()*;
+		 |
+	Water/Milk/Juice/Coffee/././././......
+		 
+		 
+		 Plate		Spoon		eat();
+		 Bowl		Chopsticks	eat();
+		 Plate		Fork		eat();
+		 Plate		Finger		lick();
+		 
+		
+		 
+	 class WaterBottle { }
+	 class MilkBottle { }
+	 class JuiceBottle { }
+	 
+	 class WaterIterator { }
+	 class MilkIterator { }
+	 class JuiceIterator { }
+	 
+	 class DrinkWater {
+	 	void drink() {
+	 	}
+	 }
+	  class DrinkJuice {
+	 	void drink() {
+	 	}
+	 }
+	  class DrinkMilk {
+	 	void drink() {
+	 	}
+	 }
+	 
+	 purchase potatoes 
+	 purchase onion
+	 purchase tomatoes
+	 purchase eggs - different container
+	 
+		 
+	different containers
+		 |
+		 sac - grocery rice 
+		 bag - office bag 
+		 laptop bag - bottle 
+		 trolly bag - wheels
+		 
+		 
+					 
+						Iterable <-- interface
+						    |iterator();
+						Collection <-- interface
+							|add();
+				-------------------------
+				|						|
+				List					Set <-- interfaces
+				|						 |
+		---------------			-------------------
+		|			|				|			|
+		ArrayList	LinkedList	TreeSet		HashSet <-- classes
+		|				|
+	growable array
+	
+
+ArrayList
+  -------
+ 0|	45  | <---
+  -------
+ 1|	56	|
+  -------
+ 2|	44	|
+  -------
+ 3|	66	|
+  -------
+ 4|	68	| <--
+ 
+ 	 |
+ growing at the end
+ 
+ 	
+ 	Linked List
+ 	
+ 			1st				2nd					3rd
+ 		-----------n---		-----------n---		-----------n---
+ 		|		| 500 |		|		| 800 |		|		| 0   |
+ 		|		|--p--+		|		|--p--+		|		|--p--+
+ 		|		| 0   |		|		| 100 |		|		| 500 |
+ 		---------------		--------------		--------------
+ 		100					500					800
+ 
 		
 		
-		
-					
 					
 					
 					
