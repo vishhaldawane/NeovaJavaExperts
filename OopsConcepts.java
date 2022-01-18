@@ -736,12 +736,13 @@ Crocodile.java	Monkey.java	Lion.java	TestIt.java
 					 /   \			   PaneerChilly
 					/	  \			   Pickle/Shrikhand
 				   /       \		   WhiskyPeg
-				  y----i----z
+				  y----i----z		   Integer
 				  |	   |	|
 			+-----+	   |	+-----+
 			|		Iterator	  |
 		Container	   |		Algorithm
 			|		   |			  |
+		ArrayList	
 		 Bottle*	Straw*		drink()*;
 		 |
 	Water/Milk/Juice/Coffee/././././......
@@ -788,17 +789,30 @@ Crocodile.java	Monkey.java	Lion.java	TestIt.java
 		 laptop bag - bottle 
 		 trolly bag - wheels
 		 
+		 interface Iterable
+		 {
+		   Iterator iterator(); //1
+		 }
+		 interface Collection extends Iterable {
+		    void add(); //1 + 5 = 6
+		 }
+		 interface List extends Collection {
+		 	//10
+		 }
+		 class ArrayList extends ....  implements List
+		 {
 		 
-					 
+		 }
+		 			 
 						Iterable <-- interface
 						    |iterator();
-						Collection <-- interface
-							|add();
-				-------------------------
-				|						|
-				List					Set <-- interfaces
-				|						 |
-		---------------			-------------------
+		?				Collection <-- interface
+		|					|add();
+		?		-------------------------
+		|		|						|
+		?		List					Set <-- interfaces
+		|		|duplicates				 |unique
+		|---------------			-------------------
 		|			|				|			|
 		ArrayList	LinkedList	TreeSet		HashSet <-- classes
 		|				|
@@ -820,8 +834,22 @@ ArrayList
  	 |
  growing at the end
  
+ append is efficient
+ search is efficient
+ but delete is not efficient
+ 
+ 
  	
- 	Linked List
+ 	Linked List - double linked list 
+ 	
+ 	search is NOT efficient
+ 	adding item at the end - not efficient
+ 	adding item at the beg - is efficient
+ 	
+ 	deleting  an item - not efficient - but flexible
+ 	inserting an item - not efficient - but flexible
+ 	updating  an item - not efficient - but flexible
+ 	
  	
  			1st				2nd					3rd
  		-----------n---		-----------n---		-----------n---
@@ -832,18 +860,59 @@ ArrayList
  		100					500					800
  
 		
+		1	->	5	->	7	->	9	->	3
+			<-		<-		<-		<0
 		
 					
 					
+		Set - non-linear data structure
+		
+		10  8   50   5    9   45  65  3  1  70 80 90 100 120 
+				
+				
+							  
+		 Btree - balanced binary tree
+							  
+							  
+							  root 100
+							---------
+							|	10	|
+						<	| L	  R |
+							---------
+							200	 300
+							|	  |
+				------------+	  +-------------
+				|								|
+			  200								300
+			---------						---------
+			|	8	|						|	50	|
+			| L	  R |						| L	  R |
+			---------						---------			
+			  |   |							  |    |
+		------+   +-----				-------		-------
+		|              |				|				|
+		5			   9				45				65
 					
-					
-					
-					
-					
-			
+			5  8  9 10  45 50 60
 	
 	
-
+		Hashing - hash key maintained by the algorithm	
+	
+	Godrej 
+	
+		-----------------
+		|				|
+		|	comics		|
+		-----------------
+		|	spiritual	|
+		|				|
+		|---------------|
+		|novel	|magz	|
+		|		|		|
+		---------		|
+		|textbk	|		|
+		|		|		|
+		-----------------
 
 
 
