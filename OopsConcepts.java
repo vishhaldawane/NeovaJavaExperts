@@ -806,11 +806,11 @@ Crocodile.java	Monkey.java	Lion.java	TestIt.java
 		 			 
 						Iterable <-- interface
 						    |iterator();
-		?				Collection <-- interface
-		|					|add();
-		?		-------------------------
-		|		|						|
-		?		List					Set <-- interfaces
+		?				Collection <-- interface <--produces   Map
+		|					|add();								|
+		?		-------------------------					-------------
+		|		|						|					|			|
+		?		List					Set <-- interfaces	TreeMap	 HashMap
 		|		|duplicates				 |unique
 		|---------------			-------------------
 		|			|				|			|
@@ -913,6 +913,89 @@ ArrayList
 		|textbk	|		|
 		|		|		|
 		-----------------
+		
+		Map <-backed by interface
+		
+		
+		synchronization
+		sa
+		synchro
+		
+		Key and Value
+		
+		
+		Ground Floor <-- Name Board
+		
+		1011   Satish Kulkarni
+		2011   Jack
+ Key->  3011   Julie
+		
+===============================================================
+
+java.io
+
+
+
+		File Input Output - Streams <-- flow of data
+				|    |
+		   reading  writing
+		   
+		   
+		   stdin							   stdout
+		   |									|
+		   System.in							System.out
+		   	Keyboard							Monitor/Printer
+		   	|									|
+		   	+-------->----------+ +-------->----+
+		   						| |
+	Socket	 ----->------   JAVA PROGRAM ------->------> Socket <-- java.net
+		   			  reading	| |  writing
+					------>-----+ +----->---+
+					|	input		output	|
+					File					File  <--- java.io
+					
+					
+					
+					
+================================================================================
+		 	Byte based stream		||		Character based streams
+			min unit is 1 byte		||		min unit 1 char = 2 bytes
+			256 ASCII				||		65535 UNICODE 
+			byte					||			int (4) 
+================================================================================
+InputStream   	|  OutputStream   	||		Reader		|	Writer	
+ read()			|    write()		||		read()		|	 write()
+================================================================================		
+FileInputStream	|FileOutputStream	|| FileReader		|  FileWriter
+BufferedInputStream	|				|| BufferedReader   |
+ObjectInputStream	|ObjectOutputStream	
+				
+				
+				
+location1				
+		Object Serialization Process
+		|
+	-----------------JVM-----------------
+	|	private data <-- bankBalance	|
+	|	|								|
+	----|---------------------------------
+		|
+		serialization [ encryption / decryption ]
+		|
+		file-----n/w--------+
+							|
+						de-serialized here at other location
+							|
+							Object
+	
+	
+					
+					
+
+
+
+
+
 
 
 
