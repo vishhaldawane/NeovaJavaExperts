@@ -988,6 +988,104 @@ location1
 							|
 							Object
 	
+			
+	SERVER - JVM
+	|			OBJECTS
+	|			serialize these object in a file
+	
+	-transport the file over the n/w
+	|
+	--------
+	|
+	CLIENT side - de-serialize the objects
+	|
+	JVM
+	
+	
+------------------------------------
+
+
+JDBC
+
+		JAVAS DATABASE CONNECTIVITY
+		
+		
+		ODBC 
+		
+			java.sql
+			
+			
+	following diagram is NOT of inheritance
+			
+						Driver
+						  | | implements
+						  | oracle.jdbc.driver.OracleDriver.class <- ORACLE
+						  | URL : oracle:jdbc:thin:@neova.airline.usa:1521:airlineReservation
+						  |
+						  | org.hsqldb.jdbc.JDBCDriver.class <- HSQLDB
+						  | URL : jdbc:hsqldb:hsql://localhost/mydb
+					DriverManager
+						  | registerDriver
+						  | getConnection
+						  |
+		----------------------------------
+			|			  |				|
+		Statement	PreparedStatement	CallableStatement
+		|				|					|
+		select	insert/update/delete		procedure/function
+		
+		1. know your database
+		2. know the jar file which provides the driver to connect to that db
+		3. register driver
+		4. getconnection
+		5. make a desired statement
+		6. execute the statement, acquire result if any, to process it
+		7. close the resources, statement, connection etc
+		
+HSQL
+		
+CREATE TABLE DEPT_NEOVA
+(
+  DEPTNO INT PRIMARY KEY,
+  DEPTNAME VARCHAR(20),
+  DEPTLOC VARCHAR(20)
+);
+
+INSERT INTO DEPT_NEOVA VALUES (10,'IT','NY');
+INSERT INTO DEPT_NEOVA VALUES (20,'TEST','NJ');
+INSERT INTO DEPT_NEOVA VALUES (30,'ACCOUNTS','ND');
+INSERT INTO DEPT_NEOVA VALUES (40,'SALES','NM');
+INSERT INTO DEPT_NEOVA VALUES (50,'PURCHASE','NP');
+
+
+ORACLE:
+
+CREATE TABLE DEPT_NEOVA
+(
+  DEPTNO NUMBER PRIMARY KEY,
+  DEPTNAME VARCHAR2(20),
+  DEPTLOC VARCHAR2(20)
+);
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
 	
 					
 					
