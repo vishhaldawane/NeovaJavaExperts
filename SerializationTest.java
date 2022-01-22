@@ -16,6 +16,7 @@ public class SerializationTest {
 			FileOutputStream fout = new FileOutputStream("bankdata.txt");
 			System.out.println("File is ready...");
 			
+			//you can transport object from it
 			ObjectOutputStream oos = new ObjectOutputStream(fout);
 			System.out.println("Object stream is ready...");
 			
