@@ -32,6 +32,9 @@ public class SigletonDemo {
 
 	public static void main(String[] args) {
 		
+		Kitchen k4 = Kitchen.getInstance();
+		Kitchen k5 = Kitchen.getInstance();
+		
 		Kitchen k1 = Kitchen.getInstance();
 		Kitchen k2 = Kitchen.getInstance();
 		Kitchen k3 = Kitchen.getInstance();
@@ -40,6 +43,9 @@ public class SigletonDemo {
 		System.out.println("k1 : "+k1);
 		System.out.println("k2 : "+k2);
 		System.out.println("k3 : "+k3);
+		
+		System.out.println("k4 : "+k4);
+		System.out.println("k5 : "+k5);
 		
 	}
 
